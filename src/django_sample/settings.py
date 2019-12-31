@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Project-specific apps
-    'posts'
+    'posts',
+    'pages'
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Project-specific settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = os.path.join('/media/')
