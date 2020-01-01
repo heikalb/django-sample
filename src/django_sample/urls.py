@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, contact_view
+from posts.views import post_detail_view, post_create_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
-    path('contact/', contact_view, name='contact')
+    path('contact/', contact_view, name='contact'),
+    path('post/', post_detail_view, name='post'),
+    path('create-post/', post_create_view, name='create-post')
 ]
