@@ -4,7 +4,14 @@ from django.http import HttpResponse
 # Create your views here.
 def home_view(request, *args, **kwargs):
     print(request.user)
-    return render(request, 'home.html', {})
+
+    context = {
+        'text': 'Hello, I am a text',
+        'number': 24,
+        'birds': ['sparrows', 'juncos', 'hummingbirds']
+    }
+
+    return render(request, 'home.html', context)
 
 
 def contact_view(request, *args, **kwargs):
