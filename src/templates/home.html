@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Welcome home!</h1>
-<p>{{ text }}, {{ number }}</p>
+<p>{{ text|capfirst|upper }}, {{ number }}</p>
 
 <ul>
     {% for bird in birds %}
-        <li>{{ forloop.counter }}. {{ bird }}</li>
+        {% if do_display %}
+            <li>{{ forloop.counter }}. {{ bird }}</li>
+        {% else%}
+            <p>Nothing to show here</p>
+        {% endif %}
     {% endfor %}
 </ul>
 {% endblock %}

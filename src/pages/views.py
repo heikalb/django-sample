@@ -8,7 +8,8 @@ def home_view(request, *args, **kwargs):
     context = {
         'text': 'Hello, I am a text',
         'number': 24,
-        'birds': ['sparrows', 'juncos', 'hummingbirds']
+        'birds': ['sparrows', 'juncos', 'hummingbirds'],
+        'do_display': False
     }
 
     return render(request, 'home.html', context)
