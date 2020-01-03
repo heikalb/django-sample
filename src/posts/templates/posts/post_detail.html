@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>In-app template: </h1>
+<h1>{{ obj.title }}</h1>
+<p>{{ obj.description }}</p>
+<p>Award: ${{ obj.award }}</p>
+<p>Contact: {{ obj.contact }}</p>
+{% endblock %}
