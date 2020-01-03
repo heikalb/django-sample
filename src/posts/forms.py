@@ -9,3 +9,8 @@ class PostForm(forms.ModelForm):
             'description',
             'award'
         ]
+
+class RawPostForm(forms.Form):
+    title = forms.CharField()
+    description = forms.CharField()
+    award = forms.DecimalField()
