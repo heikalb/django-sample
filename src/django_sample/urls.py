@@ -25,5 +25,5 @@ urlpatterns = [
     path('home/', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
     path('post/', post_detail_view, name='post'),
-    path('create-post/', post_create_view, name='create-post')
+    path('create/', post_create_view, name='create-post')
 ]
