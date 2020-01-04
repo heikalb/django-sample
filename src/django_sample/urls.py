@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, contact_view
-from posts.views import post_detail_view, post_create_view
+from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
-    path('post/', post_detail_view, name='post'),
-    path('create/', post_create_view, name='create-post')
+    path('posts/', post_detail_view, name='post'),
+    path('create/', post_create_view, name='create-post'),
+    path('posts/<int:id>', dynamic_lookup_view, name='post'),
+    path('posts/<int:id>/delete/', delete_post_view, name='post-delete')
 ]
