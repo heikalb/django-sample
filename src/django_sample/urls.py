@@ -15,18 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.urls import include
 from pages.views import home_view, contact_view
-from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view, post_list_view
+#from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view, post_list_view
 
 urlpatterns = [
+    path('posts/', include('posts.urls')),
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
-    path('posts/', post_detail_view, name='post'),
-    path('create/', post_create_view, name='create-post'),
-    path('posts/<int:id>', dynamic_lookup_view, name='post'),
-    path('posts/<int:id>/delete/', delete_post_view, name='post-delete'),
-    path('post-list/', post_list_view, name='post-list')
+    #path('posts/', post_detail_view, name='post'),
+    #path('create/', post_create_view, name='create-post'),
+    #path('posts/<int:id>', dynamic_lookup_view, name='post-detail'),
+    #path('posts/<int:id>/delete/', delete_post_view, name='post-delete'),
+    #path('post-list/', post_list_view, name='post-list'),
+    #path('posts', include('posts.urls'))
 ]
