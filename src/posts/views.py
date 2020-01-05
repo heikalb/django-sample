@@ -80,3 +80,11 @@ def delete_post_view(request, id):
 
     return render(request, 'posts/post_delete.html', context)
 
+
+def post_list_view(request):
+    queryset = Post.objects.all()
+
+    context = {'object_list': queryset}
+
+    return render(request, 'posts/post_list.html', context)
+

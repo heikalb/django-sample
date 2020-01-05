@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, contact_view
-from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view
+from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view, post_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +27,6 @@ urlpatterns = [
     path('posts/', post_detail_view, name='post'),
     path('create/', post_create_view, name='create-post'),
     path('posts/<int:id>', dynamic_lookup_view, name='post'),
-    path('posts/<int:id>/delete/', delete_post_view, name='post-delete')
+    path('posts/<int:id>/delete/', delete_post_view, name='post-delete'),
+    path('post-list/', post_list_view, name='post-list')
 ]
