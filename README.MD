@@ -1,0 +1,1 @@
+This project is to showcase me learning Django. Specific description will come.
