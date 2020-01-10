@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>Lost a pet? Found a pet? Did one of the former in Mallardville? You're
-in the right place!</h3>
-
 <ul>
     {% for post in posts %}
-        <div>{{ post.title }}</div>
+        <div>
+            <p>{{ post.title }}</p>
+            <p>{{ post.description }}</p>
+            <p>Award: ${{ post.award }}</p>
+            <p>Contact: {{ post.contact_1 }}</p>
+
+
+
+            <p>{{ post.contact_2 }}</p>
+
+        </div>
     {% endfor %}
 </ul>
 {% endblock %}
+
+ description = models.TextField()
+    contact_1 = models.CharField(max_length=80)
+    contact_2 = models.CharField(max_length=80, blank=True, null=True)
+    date_posted = models.DateField(auto_now=True)
