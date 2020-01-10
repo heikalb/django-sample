@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Welcome home!</h1>
-<p>{{ text|capfirst|upper }}, {{ number }}</p>
+<h3>Lost a pet? Found a pet? Did one of the former in Mallardville? You're
+in the right place!</h3>
 
 <ul>
-    {% for bird in birds %}
-        {% if do_display %}
-            <li>{{ forloop.counter }}. {{ bird }}</li>
-        {% else%}
-            <p>Nothing to show here</p>
-        {% endif %}
+    {% for post in posts %}
+        <div>{{ post.title }}</div>
     {% endfor %}
 </ul>
 {% endblock %}
