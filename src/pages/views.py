@@ -3,7 +3,12 @@ from posts.models import LostPost
 # Create your views here.
 
 
-def home_view(request, *args, **kwargs):
+def home_view(request):
+    """
+    View for homepage.
+    :param request: request object
+    :return:
+    """
     queryset = LostPost.objects.all()
     context = {'posts': queryset}
 
