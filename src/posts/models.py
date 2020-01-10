@@ -7,8 +7,8 @@ class Post(models.Model):
     title = models.CharField(max_length=80)
     picture = models.FileField(upload_to='uploads/', blank=True, null=True)
     description = models.TextField()
-    email = models.EmailField()
-    phone = models.CharField(max_length=80)
+    email = models.EmailField(blank=True, null=True)
+    phone = models.CharField(max_length=80, blank=True, null=True)
     date_posted = models.DateField(auto_now=True)
 
     def get_absolute_url(self):

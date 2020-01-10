@@ -1,19 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import LostPost
+from .models import Post, LostPost
 from .forms import PostForm, LostForm
 from django.http import Http404
 
 # Create your views here.
 
 
-def post_detail_view(request):
-    obj = LostPost.objects.get(id=4)
-    context = {
-                'obj': obj,
-                'title': obj.title,
-                'description': obj.description,
-                'award': obj.award,
-                'contact': obj.contact}
+def post_detail_view(request, id):
+    obj = get_object_or_404(Post, id=id)
+    context = {'obj': obj}
 
     return render(request, 'posts/post_detail.html', context)
 
@@ -52,21 +47,6 @@ def post_create_view(request):
     }
 
     return render(request, 'posts/post_create.html', context)
-
-
-def dynamic_lookup_view(request, id):
-    # obj = Post.objects.get(id=id)
-    obj = get_object_or_404(LostPost, id=id)
-
-    """
-    try:
-        obj = Post.objects.get(id=id)
-    except Post.DoesNotExist:
-        raise Http404
-    """
-    context = {'obj': obj}
-
-    return render(request, 'posts/post_detail.html', context)
 
 
 def delete_post_view(request, id):
