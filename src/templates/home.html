@@ -8,9 +8,9 @@
             <p>Award: ${{ post.award }}</p>
             <p>Contact: {{ post.contact_1 }}</p>
 
-
-
-            <p>{{ post.contact_2 }}</p>
+            {% if post.contact_2%}
+                <p>{{ post.contact_2 }}</p>
+            {% endif %}
 
         </div>
     {% endfor %}
