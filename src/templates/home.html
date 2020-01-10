@@ -6,18 +6,9 @@
             <p>{{ post.title }}</p>
             <p>{{ post.description }}</p>
             <p>Award: ${{ post.award }}</p>
-            <p>Contact: {{ post.contact_1 }}</p>
-
-            {% if post.contact_2%}
-                <p>{{ post.contact_2 }}</p>
-            {% endif %}
-
+            <p>Phone: {{ post.phone }}</p>
+            <p>Email: {{ post.email }}</p>
         </div>
     {% endfor %}
 </ul>
 {% endblock %}
-
- description = models.TextField()
-    contact_1 = models.CharField(max_length=80)
-    contact_2 = models.CharField(max_length=80, blank=True, null=True)
-    date_posted = models.DateField(auto_now=True)
