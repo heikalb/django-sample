@@ -18,9 +18,8 @@ urlpatterns = [
     path('lost/', lost_post_list_view, name='lost-post-list'),
     path('found/', found_post_list_view, name='found-post-list'),
 
-    path('create/', post_create_view, name='create-post'),
-    path('create/lost', lost_post_create_view, name='create-post'),
-    path('create/found', found_post_create_view, name='create-post'),
+    path('create/lost', lost_post_create_view, name='create-lost-post'),
+    path('create/found', found_post_create_view, name='create-found-post'),
 
     path('<int:id>/delete/', delete_post_view, name='post-delete')
 ]

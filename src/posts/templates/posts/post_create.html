@@ -3,16 +3,11 @@
 {% block content %}
 <form method="POST"> {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="save"/>
+    <input type="submit" value="Create post"/>
 </form>
 
-<form method="POST"> {% csrf_token%}
-    <input type="text" name="title"/>
-    <input type="submit" value="save">
-</form>
-
-<form action='https://duckduckgo.com' method="POST">
+<!--form action='https://duckduckgo.com' method="POST">
     <input type="text" name="q" placeholder="Search on Duckduckgo"/>
     <input type="submit" value="Search">
-</form>
+</form-->
 {% endblock %}

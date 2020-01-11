@@ -6,11 +6,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = [
-            'title',
-            'description',
-            'award'
-        ]
+        fields = ['title', 'description']
 
 
 # Basic form class to be extended
@@ -31,16 +27,16 @@ class BaseForm(forms.Form):
                                   )
                                   )
 
-    email = forms.EmailField(label='Contact 1', required=True,
+    email = forms.EmailField(label='Email', required=True,
                             widget=forms.TextInput(
-                                attrs={'placeholder': 'phone or email'}
+                                attrs={'placeholder': 'Your email'}
                             )
                             )
 
-    phone = forms.CharField(label='Contact 2', required=True,
+    phone = forms.CharField(label='Phone number', required=True,
                             widget=forms.TextInput(
                                 attrs={
-                                    'placeholder': 'alternative phone or email'}
+                                    'placeholder': 'Your phone number'}
                             )
                             )
 
