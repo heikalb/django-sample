@@ -6,6 +6,7 @@ from django.http import Http404
 # Create your views here.
 
 
+# For viewing individual posts
 def post_detail_view(request, id):
     obj = get_object_or_404(Post, id=id)
     context = {'obj': obj}
@@ -13,6 +14,7 @@ def post_detail_view(request, id):
     return render(request, 'posts/post_detail.html', context)
 
 
+# For viewing multiple posts (to be extended)
 def post_list_view(request):
     queryset = Post.objects.all()
     context = {'posts': queryset}
@@ -20,6 +22,7 @@ def post_list_view(request):
     return render(request, 'posts/post_list.html', context)
 
 
+# For viewing lost pet posts (LostPost class)
 def lost_post_list_view(request):
     queryset = LostPost.objects.all()
     context = {'posts': queryset}
@@ -27,6 +30,7 @@ def lost_post_list_view(request):
     return render(request, 'posts/post_list.html', context)
 
 
+# For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
     queryset = FoundPost.objects.all()
     context = {'posts': queryset}
