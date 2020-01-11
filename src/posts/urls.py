@@ -15,10 +15,7 @@ urlpatterns = [
     path('<int:id>', post_detail_view, name='post-detail'),
 
     path('', post_list_view, name='post-list'),
-    path('post-list/', post_list_view, name='post-list'),
-    path('lost-post-list/', lost_post_list_view, name='lost-post-list'),
     path('lost/', lost_post_list_view, name='lost-post-list'),
-    path('found-post-list/', found_post_list_view, name='found-post-list'),
     path('found/', found_post_list_view, name='found-post-list'),
 
     path('create/', post_create_view, name='create-post'),
