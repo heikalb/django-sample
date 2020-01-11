@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from pages.views import home_view
-#from posts.views import post_detail_view, post_create_view, dynamic_lookup_view, delete_post_view, post_list_view
 
 urlpatterns = [
     path('posts/', include('posts.urls')),
