@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post, LostPost
+from .models import Post, LostPost, FoundPost
 from .forms import PostForm, LostForm
 from django.http import Http404
 
@@ -11,6 +11,30 @@ def post_detail_view(request, id):
     context = {'obj': obj}
 
     return render(request, 'posts/post_detail.html', context)
+
+
+def post_list_view(request):
+    queryset = Post.objects.all()
+    context = {'posts': queryset}
+
+    return render(request, 'posts/post_list.html', context)
+
+
+def lost_post_list_view(request):
+    queryset = LostPost.objects.all()
+    context = {'posts': queryset}
+
+    return render(request, 'posts/post_list.html', context)
+
+
+def found_post_list_view(request):
+    queryset = FoundPost.objects.all()
+    context = {'posts': queryset}
+
+    return render(request, 'posts/post_list.html', context)
+
+
+
 
 
 def post_create_view_(request):
@@ -60,11 +84,3 @@ def delete_post_view(request, id):
     context = {'obj': obj}
 
     return render(request, 'posts/post_delete.html', context)
-
-
-def post_list_view(request):
-    queryset = LostPost.objects.all()
-
-    context = {'object_list': queryset}
-
-    return render(request, 'posts/post_list.html', context)
