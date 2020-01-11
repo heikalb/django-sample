@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, LostPost, FoundPost
-from .forms import PostForm, LostForm
+from .forms import PostForm, LostForm, FoundForm
 from django.http import Http404
 
 # Create your views here.
@@ -37,6 +37,50 @@ def found_post_list_view(request):
 
 
 
+def post_create_view__(request, post_class):
+    form = LostForm()
+
+    if request.method == 'POST':
+        form = LostForm(request.POST)
+
+        if form.is_valid():
+            LostPost.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'posts/post_create.html', context)
+
+
+def post_create_view(request, PostClass, FormClass):
+    form = FormClass()
+
+    if request.method == 'POST':
+        form = FormClass(request.POST)
+
+        if form.is_valid():
+            PostClass.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'posts/post_create.html', context)
+
+
+def lost_post_create_view(request):
+    return post_create_view(request, LostPost, LostForm)
+
+
+def found_post_create_view(request):
+    return post_create_view(request, FoundPost, FoundForm)
+
+
 def post_create_view_(request):
     print(request.GET)
     print(request.GET['title'])
@@ -49,26 +93,6 @@ def post_create_view_(request):
         form.PostForm()
 
     context = {'form': form}
-
-    return render(request, 'posts/post_create.html', context)
-
-
-def post_create_view(request):
-    form = LostForm()
-
-    if request.method == 'POST':
-        form = LostForm(request.POST)
-
-        if form.is_valid():
-            print(form.cleaned_data)
-            LostPost.objects.create(**form.cleaned_data)
-
-        else:
-            print(form.errors)
-
-    context = {
-        'form': form
-    }
 
     return render(request, 'posts/post_create.html', context)
 

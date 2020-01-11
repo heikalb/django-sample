@@ -21,7 +21,6 @@ class BaseForm(forms.Form):
 
     picture = forms.FileField(widget=forms.FileInput())
 
-
     description = forms.CharField(required=True,
                                   widget=forms.Textarea(
                                             attrs={'rows': 10,
