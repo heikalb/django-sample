@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from posts.models import LostPost
+from posts.models import Post
 # Create your views here.
 
 
@@ -9,7 +9,7 @@ def home_view(request):
     :param request: request object
     :return:
     """
-    queryset = LostPost.objects.all()
+    queryset = Post.objects.all()
     context = {'posts': queryset}
 
     return render(request, 'home.html', context)
