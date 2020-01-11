@@ -1,10 +1,10 @@
 from django import forms
-from .models import LostPost
+from .models import Post
 
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = LostPost
+        model = Post
         fields = [
             'title',
             'description',
