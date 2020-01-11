@@ -17,7 +17,7 @@ class BaseForm(forms.Form):
                             )
                             )
 
-    picture = forms.FileField(widget=forms.FileInput())
+    picture = forms.FileField(widget=forms.FileInput(), required=False)
 
     description = forms.CharField(required=True,
                                   widget=forms.Textarea(
@@ -33,7 +33,7 @@ class BaseForm(forms.Form):
                             )
                             )
 
-    phone = forms.CharField(label='Phone number', required=True,
+    phone = forms.CharField(label='Phone number', required=False,
                             widget=forms.TextInput(
                                 attrs={
                                     'placeholder': 'Your phone number'}

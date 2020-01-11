@@ -38,10 +38,42 @@ def found_post_list_view(request):
     return render(request, 'posts/post_list.html', context)
 
 
+# For creating base post (just for reference)
+def post_create_view(request):
+    form = PostForm()
+
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+
+        if form.is_valid():
+            Post.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+
+    context = {'form': form}
+
+    return render(request, 'posts/post_create.html', context)
 
 
+# For creating found pet posts
+def found_post_create_view(request):
+    form = FoundForm()
 
-def post_create_view__(request, post_class):
+    if request.method == 'POST':
+        form = FoundForm(request.POST)
+
+        if form.is_valid():
+            FoundPost.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+
+    context = {'form': form}
+
+    return render(request, 'posts/post_create.html', context)
+
+
+# For creating found pet posts
+def lost_post_create_view(request):
     form = LostForm()
 
     if request.method == 'POST':
@@ -52,37 +84,10 @@ def post_create_view__(request, post_class):
         else:
             print(form.errors)
 
-    context = {
-        'form': form
-    }
+    context = {'form': form}
 
     return render(request, 'posts/post_create.html', context)
 
-
-def post_create_view(request, PostClass, FormClass):
-    form = FormClass()
-
-    if request.method == 'POST':
-        form = FormClass(request.POST)
-
-        if form.is_valid():
-            PostClass.objects.create(**form.cleaned_data)
-        else:
-            print(form.errors)
-
-    context = {
-        'form': form
-    }
-
-    return render(request, 'posts/post_create.html', context)
-
-
-def lost_post_create_view(request):
-    return post_create_view(request, LostPost, LostForm)
-
-
-def found_post_create_view(request):
-    return post_create_view(request, FoundPost, FoundForm)
 
 
 def post_create_view_(request):
@@ -99,6 +104,10 @@ def post_create_view_(request):
     context = {'form': form}
 
     return render(request, 'posts/post_create.html', context)
+
+
+
+
 
 
 def delete_post_view(request, id):
