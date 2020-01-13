@@ -3,12 +3,22 @@
 {% block content %}
 <h1>{{ obj.title }}</h1>
 
-{% if obj.picture%}
+{% if obj.picture %}
 <img src="">
 {% endif %}
 
 <p>{{ obj.description }}</p>
-<p>Award: ${{ obj.award }}</p>
-<p>Phone number: {{ obj.phone }}</p>
-<p>Email: {{ obj.email }}</p>
+
+{% if obj.lostpost %}
+    <p>Award: $ {{ obj.award }}</p>
+{% endif %}
+
+{% if obj.phone %}
+    <p>Phone number: {{ obj.phone }}</p>
+{% endif %}
+
+{% if obj.email %}
+    <p>Email: {{ obj.email }}</p>
+{% endif %}
+
 {% endblock %}

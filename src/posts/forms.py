@@ -27,7 +27,7 @@ class BaseForm(forms.Form):
                                   )
                                   )
 
-    email = forms.EmailField(label='Email', required=True,
+    email = forms.EmailField(label='Email', required=False,
                             widget=forms.TextInput(
                                 attrs={'placeholder': 'Your email'}
                             )
@@ -52,7 +52,6 @@ class BaseForm(forms.Form):
 # Form for reporting lost pets
 class LostForm(BaseForm):
     award = forms.DecimalField(label='Award', widget=forms.NumberInput())
-    pass
 
 
 # Form for reporting found pets

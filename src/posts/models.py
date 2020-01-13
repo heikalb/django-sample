@@ -6,7 +6,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=80)
     picture = models.FileField(upload_to='uploads/', blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=80, blank=True, null=True)
     date_posted = models.DateField(auto_now=True)
@@ -19,7 +19,6 @@ class Post(models.Model):
 class LostPost(Post):
     award = models.DecimalField(max_digits=100, decimal_places=2, blank=True,
                                 null=True, default=0.00)
-
 
 class FoundPost(Post):
     pass

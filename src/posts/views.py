@@ -47,6 +47,25 @@ def post_create_view(request):
 
         if form.is_valid():
             Post.objects.create(**form.cleaned_data)
+            form = PostForm
+        else:
+            print(form.errors)
+
+    context = {'form': form}
+
+    return render(request, 'posts/post_create.html', context)
+
+
+# For creating lost pet posts
+def lost_post_create_view(request):
+    form = LostForm()
+
+    if request.method == 'POST':
+        form = LostForm(request.POST)
+
+        if form.is_valid():
+            LostPost.objects.create(**form.cleaned_data)
+            form = LostForm()
         else:
             print(form.errors)
 
@@ -64,6 +83,7 @@ def found_post_create_view(request):
 
         if form.is_valid():
             FoundPost.objects.create(**form.cleaned_data)
+            form= FoundForm()
         else:
             print(form.errors)
 
@@ -72,29 +92,8 @@ def found_post_create_view(request):
     return render(request, 'posts/post_create.html', context)
 
 
-# For creating found pet posts
-def lost_post_create_view(request):
-    form = LostForm()
-
-    if request.method == 'POST':
-        form = LostForm(request.POST)
-
-        if form.is_valid():
-            LostPost.objects.create(**form.cleaned_data)
-        else:
-            print(form.errors)
-
-    context = {'form': form}
-
-    return render(request, 'posts/post_create.html', context)
-
-
-
+# For reference only (not used in webapp)
 def post_create_view_(request):
-    print(request.GET)
-    print(request.GET['title'])
-    print(request.POST)
-
     form = PostForm(request.POST or None)
 
     if form.is_valid():
