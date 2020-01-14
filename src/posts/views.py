@@ -25,18 +25,16 @@ def post_list_view(request, PostClass, heading):
 # For viewing lost pet posts (LostPost class)
 def lost_post_list_view(request):
     heading = 'Lost pets'
-
     return post_list_view(request, LostPost, heading)
 
 
 # For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
     heading = "Pets other people found"
-
     return post_list_view(request, FoundPost, heading)
 
 
-# For creating base post (just for reference)
+# For creating posts (to be extended)
 def post_create_view(request, PostClass, FormClass, heading):
     form = FormClass()
 
@@ -57,14 +55,12 @@ def post_create_view(request, PostClass, FormClass, heading):
 # For creating lost pet posts
 def lost_post_create_view(request):
     heading = 'Report a lost pet'
-
     return post_create_view(request, LostPost, LostForm, heading)
 
 
 # For creating found pet posts
 def found_post_create_view(request):
     heading = 'Report a pet you found'
-
     return post_create_view(request, FoundPost, FoundForm, heading)
 
 
