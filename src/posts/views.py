@@ -15,8 +15,8 @@ def post_detail_view(request, id):
 
 
 # For viewing multiple posts (to be extended)
-def post_list_view(request):
-    queryset = Post.objects.all()
+def post_list_view(request, PostClass):
+    queryset = PostClass.objects.all()
     context = {'posts': queryset}
 
     return render(request, 'posts/post_list.html', context)
@@ -24,18 +24,12 @@ def post_list_view(request):
 
 # For viewing lost pet posts (LostPost class)
 def lost_post_list_view(request):
-    queryset = LostPost.objects.all()
-    context = {'posts': queryset}
-
-    return render(request, 'posts/post_list.html', context)
+    return post_list_view(request, LostPost)
 
 
 # For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
-    queryset = FoundPost.objects.all()
-    context = {'posts': queryset}
-
-    return render(request, 'posts/post_list.html', context)
+    return post_list_view(request, FoundPost)
 
 
 # For creating base post (just for reference)
