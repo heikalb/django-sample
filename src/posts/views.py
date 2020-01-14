@@ -37,6 +37,7 @@ def found_post_list_view(request):
 # For creating posts (to be extended)
 def post_create_view(request, PostClass, FormClass, heading):
     form = FormClass()
+    response_msg = ''
 
     if request.method == 'POST':
         form = FormClass(request.POST)
@@ -44,10 +45,11 @@ def post_create_view(request, PostClass, FormClass, heading):
         if form.is_valid():
             PostClass.objects.create(**form.cleaned_data)
             form = FormClass()
+            response_msg = 'Your post has been created'
         else:
             print(form.errors)
 
-    context = {'form': form, 'heading': heading}
+    context = {'form': form, 'heading': heading, 'response_msg': response_msg}
 
     return render(request, 'posts/post_create.html', context)
 
