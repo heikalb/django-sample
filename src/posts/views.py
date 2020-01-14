@@ -15,25 +15,29 @@ def post_detail_view(request, id):
 
 
 # For viewing multiple posts (to be extended)
-def post_list_view(request, PostClass):
+def post_list_view(request, PostClass, heading):
     queryset = PostClass.objects.all()
-    context = {'posts': queryset}
+    context = {'posts': queryset, 'heading': heading}
 
     return render(request, 'posts/post_list.html', context)
 
 
 # For viewing lost pet posts (LostPost class)
 def lost_post_list_view(request):
-    return post_list_view(request, LostPost)
+    heading = 'Lost pets'
+
+    return post_list_view(request, LostPost, heading)
 
 
 # For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
-    return post_list_view(request, FoundPost)
+    heading = "Pets other people found"
+
+    return post_list_view(request, FoundPost, heading)
 
 
 # For creating base post (just for reference)
-def post_create_view(request, PostClass, FormClass):
+def post_create_view(request, PostClass, FormClass, heading):
     form = FormClass()
 
     if request.method == 'POST':
@@ -45,19 +49,23 @@ def post_create_view(request, PostClass, FormClass):
         else:
             print(form.errors)
 
-    context = {'form': form}
+    context = {'form': form, 'heading': heading}
 
     return render(request, 'posts/post_create.html', context)
 
 
 # For creating lost pet posts
 def lost_post_create_view(request):
-    return post_create_view(request, LostPost, LostForm)
+    heading = 'Report a lost pet'
+
+    return post_create_view(request, LostPost, LostForm, heading)
 
 
 # For creating found pet posts
 def found_post_create_view(request):
-    return post_create_view(request, FoundPost, FoundForm)
+    heading = 'Report a pet you found'
+
+    return post_create_view(request, FoundPost, FoundForm, heading)
 
 
 # For reference only (not used in webapp)
