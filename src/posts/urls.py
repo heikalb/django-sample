@@ -4,7 +4,6 @@ from .views import (
     post_detail_view,
     lost_post_list_view,
     found_post_list_view,
-    post_create_view,
     lost_post_create_view,
     found_post_create_view,
     delete_post_view,
