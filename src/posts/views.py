@@ -40,7 +40,7 @@ def post_create_view(request, PostClass, FormClass, heading):
     response_msg = ''
 
     if request.method == 'POST':
-        form = FormClass(request.POST)
+        form = FormClass(request.POST, request.FILES)
 
         if form.is_valid():
             PostClass.objects.create(**form.cleaned_data)

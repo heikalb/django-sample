@@ -17,7 +17,8 @@ class BaseForm(forms.Form):
                             )
                             )
 
-    picture = forms.FileField(widget=forms.FileInput(), required=False)
+    # picture = forms.FileField(widget=forms.FileInput(), required=False)
+    picture = forms.ImageField(required=False)
 
     description = forms.CharField(required=True,
                                   widget=forms.Textarea(
