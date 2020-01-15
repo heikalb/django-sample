@@ -8,8 +8,8 @@ from django.http import Http404
 
 # For viewing individual posts
 def post_detail_view(request, id):
-    obj = get_object_or_404(Post, id=id)
-    context = {'obj': obj}
+    post = get_object_or_404(Post, id=id)
+    context = {'post': post}
 
     return render(request, 'posts/post_detail.html', context)
 
@@ -24,14 +24,12 @@ def post_list_view(request, PostClass, heading):
 
 # For viewing lost pet posts (LostPost class)
 def lost_post_list_view(request):
-    heading = 'Lost pets'
-    return post_list_view(request, LostPost, heading)
+    return post_list_view(request, LostPost, 'Lost pets')
 
 
 # For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
-    heading = "Pets other people found"
-    return post_list_view(request, FoundPost, heading)
+    return post_list_view(request, FoundPost, "Pets other people found")
 
 
 # For creating posts (to be extended)
@@ -56,14 +54,12 @@ def post_create_view(request, PostClass, FormClass, heading):
 
 # For creating lost pet posts
 def lost_post_create_view(request):
-    heading = 'Report a lost pet'
-    return post_create_view(request, LostPost, LostForm, heading)
+    return post_create_view(request, LostPost, LostForm, 'Report a lost pet')
 
 
 # For creating found pet posts
 def found_post_create_view(request):
-    heading = 'Report a pet you found'
-    return post_create_view(request, FoundPost, FoundForm, heading)
+    return post_create_view(request, FoundPost, FoundForm, 'Report a pet you found')
 
 
 # For reference only (not used in webapp)
