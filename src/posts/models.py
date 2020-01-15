@@ -5,7 +5,8 @@ from django.urls import reverse
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=80)
-    picture = models.FileField(upload_to='uploads/', blank=True, null=True)
+    # picture = models.FileField(upload_to='uploads/', blank=True, null=True)
+    picture = models.ImageField(upload_to='uploads/', blank=True, null=True)
     description = models.TextField(null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=80, blank=True, null=True)

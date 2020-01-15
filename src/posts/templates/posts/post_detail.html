@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<h1>{{ obj.title }}</h1>
+<div class="post">
+    <h1>{{ obj.title }}</h1>
 
-{% if obj.picture %}
-<img src="">
-{% endif %}
+    {% if obj.picture %}
+    <img src="{{ obj.picture.url }}">
+    {% endif %}
 
-<p>{{ obj.description }}</p>
+    <p>{{ obj.description }}</p>
 
-{% if obj.lostpost %}
-    <p>Award: $ {{ obj.award }}</p>
-{% endif %}
+    {% if obj.lostpost %}
+        <p>Award: $ {{ obj.award }}</p>
+    {% endif %}
 
-{% if obj.phone %}
-    <p>Phone number: {{ obj.phone }}</p>
-{% endif %}
+    {% if obj.phone %}
+        <p>Phone number: {{ obj.phone }}</p>
+    {% endif %}
 
-{% if obj.email %}
-    <p>Email: {{ obj.email }}</p>
-{% endif %}
-
+    {% if obj.email %}
+        <p>Email: {{ obj.email }}</p>
+    {% endif %}
+</div>
 {% endblock %}
