@@ -1,7 +1,42 @@
 *{
-font-family: Arial;
+    font-family: Helvetica;
+}
+
+body{
+    padding: 20px;
+    padding-bottom: 0px;
 }
 
 nav{
-border-bottom-style: solid
+    border-bottom-style: solid;
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.post{
+    margin: 50px;
+    width: 80%;
+    max-width: 750px;
+    padding: 20px;
+    border-style: solid;
+    border-width: thin
+}
+
+.post img{
+    width: 90%;
+}
+
+.post .description{
+    margin-bottom: 70px;
+}
+
+#footer{
+    margin-top: 100px;
 }
