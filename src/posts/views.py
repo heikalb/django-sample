@@ -36,18 +36,22 @@ def found_post_list_view(request):
 def post_create_view(request, PostClass, FormClass, heading):
     form = FormClass()
     response_msg = ''
+    new_post = None
 
     if request.method == 'POST':
         form = FormClass(request.POST, request.FILES)
 
         if form.is_valid():
-            PostClass.objects.create(**form.cleaned_data)
+            new_post = PostClass.objects.create(**form.cleaned_data)
             form = FormClass()
             response_msg = 'Your post has been created'
         else:
             print(form.errors)
 
-    context = {'form': form, 'heading': heading, 'response_msg': response_msg}
+    context = {'form': form,
+               'heading': heading,
+               'response_msg': response_msg,
+               'new_post': new_post}
 
     return render(request, 'posts/post_create.html', context)
 
@@ -75,15 +79,14 @@ def post_create_view_(request):
     return render(request, 'posts/post_create.html', context)
 
 
-
 def delete_post_view(request, id):
-    obj = get_object_or_404(LostPost, id=id)
+    post = get_object_or_404(Post, id=id)
 
     if request.method == 'POST':
         # confirming delete
-        obj.delete()
+        post.delete()
         return redirect('../../../')
 
-    context = {'obj': obj}
+    context = {'post': post}
 
     return render(request, 'posts/post_delete.html', context)
