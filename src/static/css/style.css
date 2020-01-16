@@ -4,6 +4,7 @@
 
 body{
     padding: 20px;
+    padding-top: 0px;
     padding-bottom: 0px;
 }
 
@@ -21,20 +22,25 @@ nav li{
 }
 
 .post{
-    margin: 50px;
+    margin: 10%;
+    margin-top: 5%;
     width: 80%;
-    max-width: 750px;
-    padding: 20px;
+    max-width: 600px;
+    padding:4%;
     border-style: solid;
-    border-width: thin
+    border-width: thin;
 }
 
 .post img{
-    width: 90%;
+    width: 80%;
 }
 
 .post .description{
     margin-bottom: 70px;
+}
+
+.create-response
+{
 }
 
 #footer{
