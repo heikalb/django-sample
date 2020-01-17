@@ -29,7 +29,7 @@ def lost_post_list_view(request):
 
 # For viewing found pet posts (FoundPost class)
 def found_post_list_view(request):
-    return post_list_view(request, FoundPost, "Pets other people found")
+    return post_list_view(request, FoundPost, "Pets people found")
 
 
 # For creating posts (to be extended)
