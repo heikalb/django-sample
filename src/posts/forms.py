@@ -13,7 +13,9 @@ class PostForm(forms.ModelForm):
 class BaseForm(forms.Form):
     title = forms.CharField(required=True,
                             widget=forms.TextInput(
-                                attrs={'placeholder': 'Your title'}
+                                attrs={'placeholder': 'Your title',
+                                       'size': 80
+                                       }
                             )
                             )
 
@@ -24,15 +26,17 @@ class BaseForm(forms.Form):
                                   widget=forms.Textarea(
                                       attrs={'rows': 10,
                                              'class': 'description',
-                                             'cols': 100}
+                                             'cols': 80}
                                   )
                                   )
 
     email = forms.EmailField(label='Email', required=False,
-                            widget=forms.TextInput(
-                                attrs={'placeholder': 'Your email'}
-                            )
-                            )
+                             widget=forms.TextInput(
+                                 attrs={'placeholder': 'Your email',
+                                        'size': 40
+                                        }
+                             )
+                             )
 
     phone = forms.CharField(label='Phone number', required=False,
                             widget=forms.TextInput(
