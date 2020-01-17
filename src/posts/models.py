@@ -13,6 +13,7 @@ class Post(models.Model):
     date_posted = models.DateField(auto_now=True)
     award = models.DecimalField(max_digits=100, decimal_places=2, blank=True,
                                 null=True, default=0.00)
+    password = models.CharField(default='password', max_length=100)
 
     def get_absolute_url(self):
         # return f'/posts/{self.id}'

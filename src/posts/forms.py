@@ -62,3 +62,8 @@ class LostForm(BaseForm):
 # Form for reporting found pets
 class FoundForm(BaseForm):
     pass
+
+
+class DeleteForm(forms.Form):
+    password = forms.CharField(label='Password', required=True,
+                               widget=forms.PasswordInput)

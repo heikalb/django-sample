@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, LostPost, FoundPost
-from .forms import PostForm, LostForm, FoundForm
+from .forms import PostForm, LostForm, FoundForm, DeleteForm
 from django.http import Http404
 
 # Create your views here.
@@ -81,12 +81,16 @@ def post_create_view_(request):
 
 def delete_post_view(request, id):
     post = get_object_or_404(Post, id=id)
+    form = DeleteForm()
+    response_msg = ''
 
     if request.method == 'POST':
-        # confirming delete
-        post.delete()
-        return redirect('../../../')
+        if post.password == request.POST['password']:
+            post.delete()
+            return redirect('/')
+        else:
+            response_msg = 'Incorrect password'
 
-    context = {'post': post}
+    context = {'post': post, 'form': form}
 
     return render(request, 'posts/post_delete.html', context)
