@@ -39,8 +39,8 @@ nav li{
     margin-bottom: 70px;
 }
 
-.create-response
-{
+.form-container{
+    width: 40%;
 }
 
 #footer{
