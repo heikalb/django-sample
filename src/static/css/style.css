@@ -39,6 +39,14 @@ nav li{
     margin-bottom: 70px;
 }
 
+a.delete-link{
+    margin-left: 10%;
+}
+
+form input, form textarea{
+    font-size: medium;
+}
+
 .form-container{
     width: 40%;
 }

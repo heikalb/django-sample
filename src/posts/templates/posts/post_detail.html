@@ -21,4 +21,6 @@
         <p>Email: {{ post.email }}</p>
     {% endif %}
 </div>
+
+<a href="{{ post.get_delete_url }}" class='delete-link'>Delete post</a>
 {% endblock %}

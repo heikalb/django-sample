@@ -19,6 +19,9 @@ class Post(models.Model):
         # return f'/posts/{self.id}'
         return reverse('post-detail', kwargs={'id': self.id})
 
+    def get_delete_url(self):
+        return reverse('post-delete', kwargs={'id': self.id})
+
 
 class LostPost(Post):
     pass
