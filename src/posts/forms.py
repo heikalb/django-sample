@@ -45,6 +45,11 @@ class BaseForm(forms.Form):
                             )
                             )
 
+    password = forms.CharField(label='Password (for deleting post)', required=False,
+                               widget=forms.TextInput(attrs={
+                                   'placeholder': 'Your password'
+                               }))
+
     def clean_title(self):
         title = self.cleaned_data.get('title')
 
