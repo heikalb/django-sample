@@ -14,7 +14,7 @@ class BaseForm(forms.Form):
     title = forms.CharField(required=True,
                             widget=forms.TextInput(
                                 attrs={'placeholder': 'Your title',
-                                       'size': 80
+                                       'size': 50
                                        }
                             )
                             )
@@ -26,7 +26,7 @@ class BaseForm(forms.Form):
                                   widget=forms.Textarea(
                                       attrs={'rows': 10,
                                              'class': 'description',
-                                             'cols': 80}
+                                             'cols': 50}
                                   )
                                   )
 
@@ -56,7 +56,7 @@ class BaseForm(forms.Form):
 
 # Form for reporting lost pets
 class LostForm(BaseForm):
-    award = forms.DecimalField(label='Award', widget=forms.NumberInput())
+    award = forms.DecimalField(label='Award $', widget=forms.NumberInput())
 
 
 # Form for reporting found pets
