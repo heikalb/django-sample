@@ -3,17 +3,19 @@
 {% block content %}
 <h2>{{ heading }}</h2>
 
+{% if new_post %}
+<h3 class="create-response">
+    <a href="{{ new_post.get_absolute_url}}">{{ response_msg }}</a>
+</h3>
+{% endif %}
+
 <div class="form-container">
     <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Create post"/>
     </form>
 </div>
-{% if new_post %}
-<h3 class="create-response">
-    <a href="{{ new_post.get_absolute_url}}">{{ response_msg }}</a>
-</h3>
-{% endif %}
+
 
 <!--form action='https://duckduckgo.com' method="POST">
     <input type="text" name="q" placeholder="Search on Duckduckgo"/>
