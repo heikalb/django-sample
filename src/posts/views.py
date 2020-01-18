@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, LostPost, FoundPost
 from .forms import PostForm, LostForm, FoundForm, DeleteForm
+from django.core.files.storage import default_storage
 from django.http import Http404
 
 # Create your views here.
@@ -11,6 +12,7 @@ def post_detail_view(request, id):
     post = get_object_or_404(Post, id=id)
     context = {'post': post}
 
+    print(post.picture.path)
     return render(request, 'posts/post_detail.html', context)
 
 
@@ -86,6 +88,7 @@ def delete_post_view(request, id):
 
     if request.method == 'POST':
         if post.password == request.POST['password']:
+            default_storage.delete(post.picture.path)
             post.delete()
             return redirect('/')
         else:
