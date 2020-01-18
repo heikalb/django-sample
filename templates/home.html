@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lost a pet? Found a pet? Did one of the former in Mallardville? You're in the right place.</h2>
+
+{% for post in posts %}
+<div>
+    <a href="{{ post.get_absolute_url }}"><p>{{ post.title }}</p></a>
+</div>
+{% endfor %}
+{% endblock %}
