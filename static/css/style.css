@@ -1,0 +1,60 @@
+*{
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+nav{
+    border-bottom-style: solid;
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.post{
+    margin: 10%;
+    margin-top: 5%;
+    width: 80%;
+    max-width: 600px;
+    padding:4%;
+    border-style: solid;
+    border-width: thin;
+}
+
+.post img{
+    width: 80%;
+}
+
+.post .description{
+    margin-bottom: 70px;
+}
+
+a.delete-link{
+    margin-left: 10%;
+}
+
+form input, form textarea{
+    font-size: medium;
+}
+
+.form-container{
+    width: 40%;
+}
+
+.password-response-msg{
+    color: red;
+}
+
+#footer{
+    margin-top: 100px;
+}
