@@ -43,6 +43,10 @@ nav li{
     width: 40%;
 }
 
+.password-response-msg{
+    color: red;
+}
+
 #footer{
     margin-top: 100px;
 }
