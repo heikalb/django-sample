@@ -25,7 +25,7 @@ SECRET_KEY = 'lipehe)we-_*cn#vbmqq)eraw^d#65_&w4%2enmev&73_-v&er'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['heikalb.pythonanywhere.com']
 
 
 # Application definition
