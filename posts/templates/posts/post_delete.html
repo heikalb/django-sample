@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="." method="POST">{% csrf_token %}
+    <h1>Do you want to delete the post "{{post.title}}"?</h1>
+    <p>Enter the password you submitted when making the post.</p>
+    {{ form.as_p }}
+
+    {% if response_msg %}
+        <p class="password-response-msg">{{ response_msg }}</p>
+    {% endif %}
+
+    <p><input type="submit" value="Yes"/> <a href="{{ post.get_absolute_url}}">Cancel</a></p>
+</form>
+
+{% endblock %}

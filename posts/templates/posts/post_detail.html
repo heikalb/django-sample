@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post">
+    <h1>{{ post.title }}</h1>
+
+    {% if post.picture %}
+    <img src="{{ post.picture.url }}">
+    {% endif %}
+
+    <p class="description">{{ post.description }}</p>
+
+    {% if post.lostpost %}
+        <p>Award: $ {{ post.award }}</p>
+    {% endif %}
+
+    {% if post.phone %}
+        <p>Phone number: {{ post.phone }}</p>
+    {% endif %}
+
+    {% if post.email %}
+        <p>Email: {{ post.email }}</p>
+    {% endif %}
+</div>
+
+<a href="{{ post.get_delete_url }}" class='delete-link'>Delete post</a>
+{% endblock %}
