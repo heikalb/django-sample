@@ -45,7 +45,7 @@ class BaseForm(forms.Form):
                             )
                             )
 
-    password = forms.CharField(label='Password (for deleting post)', required=False,
+    password = forms.CharField(label='Password (for deleting post)', required=True,
                                widget=forms.PasswordInput)
 
     def clean_title(self):
