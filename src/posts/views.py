@@ -91,6 +91,6 @@ def delete_post_view(request, id):
         else:
             response_msg = 'Incorrect password'
 
-    context = {'post': post, 'form': form}
+    context = {'post': post, 'form': form, 'response_msg': response_msg}
 
     return render(request, 'posts/post_delete.html', context)
