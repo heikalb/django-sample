@@ -12,7 +12,6 @@ def post_detail_view(request, id):
     post = get_object_or_404(Post, id=id)
     context = {'post': post}
 
-    print(post.picture.path)
     return render(request, 'posts/post_detail.html', context)
 
 
@@ -88,12 +87,14 @@ def delete_post_view(request, id):
 
     if request.method == 'POST':
         if post.password == request.POST['password']:
-            default_storage.delete(post.picture.path)
+            if post.picture:
+                default_storage.delete(post.picture.path)
+
             post.delete()
             return redirect('/')
         else:
             response_msg = 'Incorrect password'
 
-    context = {'post': post, 'form': form, 'response_msg': response_msg}
+    context = {'post': post, 'form': form, 'response_msg': response_msg, }
 
     return render(request, 'posts/post_delete.html', context)
