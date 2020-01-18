@@ -9,4 +9,4 @@ and for pets found.
 This project involved working on models and their fields, forms, views, 
 URL routing, HTML templates and CSS styling.
 
-The webapp is deployed at http://heikalb.pythonanywhere.com
+The webapp is deployed at http://heikalb.pythonanywhere.com 
