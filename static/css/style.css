@@ -1,15 +1,21 @@
 *{
     font-family: Helvetica, sans-serif;
+    color: #262626;
 }
 
 body{
-    padding: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
 nav{
     border-bottom-style: solid;
+    border-bottom-color: #666666;
+    border-bottom-width: thin;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 nav ul{
@@ -19,6 +25,18 @@ nav ul{
 nav li{
     display: inline-block;
     margin-right: 20px;
+}
+
+
+a, a *{
+    text-decoration: none;
+    color: #004d4d;
+}
+
+div.content{
+    padding-top: 120px;
+    padding-left: 10%;
+    padding-right: 20%;
 }
 
 .post{
@@ -55,6 +73,14 @@ form input, form textarea{
     color: red;
 }
 
-#footer{
+div.footer{
     margin-top: 100px;
+    width: 100%;
+}
+
+div.footer p{
+    color: #808080;
+    margin: auto;
+    width: 50%;
+    text-align: center;
 }
