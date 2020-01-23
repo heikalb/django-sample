@@ -22,5 +22,8 @@
     {% endif %}
 </div>
 
-<a href="{{ post.get_delete_url }}" class='delete-link'>Delete post</a>
+<div class='delete-link-container'>
+    <a href="{{ post.get_delete_url }}" class='delete-link'>Delete post</a>
+</div>
+
 {% endblock %}

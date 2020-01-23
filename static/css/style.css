@@ -3,11 +3,6 @@
     color: #262626;
 }
 
-body{
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
 nav{
     border-bottom-style: solid;
     border-bottom-color: #666666;
@@ -16,6 +11,7 @@ nav{
     top: 0px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
+    padding-left: 20px;
 }
 
 nav ul{
@@ -27,60 +23,97 @@ nav li{
     margin-right: 20px;
 }
 
-
 a, a *{
     text-decoration: none;
     color: #004d4d;
 }
 
 div.content{
-    padding-top: 120px;
-    padding-left: 10%;
-    padding-right: 20%;
+    padding-top: 150px;
+    width: 100%;
 }
 
-.post{
-    margin: 10%;
+div.content > *{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+div.content div.post{
+    margin: auto;
     margin-top: 5%;
     width: 80%;
     max-width: 600px;
-    padding:4%;
+    padding: 4%;
     border-style: solid;
     border-width: thin;
 }
 
-.post img{
-    width: 80%;
+div.post h1{
+    margin-top: 0px;
 }
 
-.post .description{
+div.post img{
+    width: 100%;
+}
+
+div.post p.description{
     margin-bottom: 70px;
 }
 
-a.delete-link{
-    margin-left: 10%;
+div.delete-link-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 600px;
 }
 
-form input, form textarea{
-    font-size: medium;
+div.post-link-container{
+    width: 50%;
+    min-width: 200px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
+    margin: 2%;
+    margin-left: 0px;
+    padding: 1%;
 }
 
-.form-container{
+div.form-container{
     width: 40%;
+    min-width: 300px;
 }
+
+form input[type='text'], form textarea, form input[type='password']{
+    font-size: large;
+    width: 100%;
+}
+
+form input[type='submit']{
+    padding: 10px;
+    background-color: white;
+    color: #004d4d;
+    font-size: large;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #004d4d;
+    border-width: thin;
+}
+
 
 .password-response-msg{
     color: red;
 }
 
 div.footer{
-    margin-top: 100px;
+    margin-top: 150px;
     width: 100%;
+    bottom: 0px;
 }
 
 div.footer p{
-    color: #808080;
+    color: #bfbfbf;
     margin: auto;
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
