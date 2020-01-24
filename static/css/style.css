@@ -10,7 +10,7 @@ nav{
     position: fixed;
     top: 0px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.92);
     padding: 1%;
 }
 
@@ -31,11 +31,14 @@ nav li{
 
 a, a *{
     text-decoration: none;
-    color: #004d4d;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 div.content{
-    padding-top: 150px;
+    padding-top: 10%;
     width: 100%;
 }
 
@@ -44,10 +47,9 @@ div.content > *{
     margin-right: 5%;
 }
 
-
-div.content div.post{
-    margin: auto;
-    margin-top: 5%;
+div.post{
+    margin-right: auto;
+    margin-left: auto;
     width: 80%;
     max-width: 600px;
     padding: 4%;
@@ -64,7 +66,7 @@ div.post img{
 }
 
 div.post p.description{
-    margin-bottom: 70px;
+    margin-bottom: 10%;
 }
 
 div.delete-link-container{
@@ -76,10 +78,9 @@ div.delete-link-container{
 
 div.post-link-container{
     width: 50%;
-    min-width: 250px;
     border-style: solid;
     border-width: thin;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 2%;
     margin-left: 0px;
     padding: 1%;
@@ -87,23 +88,15 @@ div.post-link-container{
 
 div.form-container{
     width: 40%;
-    min-width: 280px;
 }
 
-form input[type='text'], form textarea, form input[type='password']{
+form input[type='text'], form textarea{
     font-size: large;
     width: 100%;
 }
 
-form input[type='submit']{
-    padding: 10px;
-    background-color: white;
-    color: #004d4d;
+input{
     font-size: large;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: #004d4d;
-    border-width: thin;
 }
 
 .password-response-msg{
@@ -121,4 +114,26 @@ div.footer p{
     margin: auto;
     width: 100%;
     text-align: center;
+}
+
+@media only screen and (max-width: 800px){
+    *{
+        font-size: 2.4vh;
+    }
+    
+    div.content{
+        padding-top: 15%;
+    }
+    
+    div.post-link-container{
+        width: 80%;
+    }
+    
+    div.form-container{
+        width: 80%;
+    }
+    
+    input{
+        font-size: medium;
+    }
 }
