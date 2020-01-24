@@ -11,16 +11,22 @@ nav{
     top: 0px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
-    padding-left: 20px;
+    padding: 1%;
+}
+
+nav h1{
+    margin: 0px;
 }
 
 nav ul{
     padding: 0px;
+    margin: 0px;
 }
 
 nav li{
     display: inline-block;
-    margin-right: 20px;
+    margin-top: 1%;
+    margin-right: 2%;
 }
 
 a, a *{
@@ -70,7 +76,7 @@ div.delete-link-container{
 
 div.post-link-container{
     width: 50%;
-    min-width: 200px;
+    min-width: 250px;
     border-style: solid;
     border-width: thin;
     border-radius: 10px;
@@ -81,7 +87,7 @@ div.post-link-container{
 
 div.form-container{
     width: 40%;
-    min-width: 300px;
+    min-width: 280px;
 }
 
 form input[type='text'], form textarea, form input[type='password']{
@@ -99,7 +105,6 @@ form input[type='submit']{
     border-color: #004d4d;
     border-width: thin;
 }
-
 
 .password-response-msg{
     color: red;
