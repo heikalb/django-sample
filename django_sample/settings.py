@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lipehe)we-_*cn#vbmqq)eraw^d#65_&w4%2enmev&73_-v&er'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['heikalb.pythonanywhere.com', '127.0.0.1']
 
